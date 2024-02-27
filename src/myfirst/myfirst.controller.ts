@@ -15,7 +15,7 @@ export class MyfirstController {
   @Post()
   @UsePipes(ValidationPipe)
   myReceive(@Body() body: myDto) {
-    console.log(body);
+    //console.log(body);
     return this.myfirstService.myReceive2(body);
   }
 }
