@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MyfirstModule } from './myfirst/myfirst.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './myfirst/myfirst.entity';
+import { MysecModule } from './mysec/mysec.module';
 
 @Module({
   imports: [
@@ -14,9 +14,10 @@ import { User } from './myfirst/myfirst.entity';
       username: 'postgres',
       password: 'postgres',
       database: 'nest-auth-test',
-      entities: [User],
-      synchronize: true,
+      entities: [],
+      synchronize: false,
     }),
+    MysecModule,
     MyfirstModule,
   ],
   controllers: [AppController],
